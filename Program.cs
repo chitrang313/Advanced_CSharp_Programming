@@ -13,8 +13,13 @@
 
         string message = Console.ReadLine();
 
-        multiLogDel(message); 
-    }    
+        //multiLogDel(message); 
+        DelegateCall(logTextToFileDel, message);
+    }
+
+    static void DelegateCall(LogDel logDel, string message) {
+        logDel(message);
+    }
 }
 
 class Log {
